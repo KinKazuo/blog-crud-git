@@ -37,3 +37,27 @@ Vanilla JavaScript
  Nodemon
  dotenv
  Git & GitHub
+## Project Structure
+blog-crud-api/
+│
+├── src/
+│ ├── config/
+│ │ └── db.js # MongoDB connection
+│ ├── controllers/
+│ │ └── blogController.js # CRUD logic
+│ ├── models/
+│ │ └── Blog.js # Blog schema
+│ ├── routes/
+│ │ └── blogRoutes.js # API routes
+│ ├── middlewares/
+│ │ └── errorHandler.js # Error handling
+│ └── server.js # App entry point
+│
+├── public/
+│ ├── index.html # Frontend UI
+│ └── app.js # Frontend logic
+│
+├── .env.example # Environment variables example
+├── .gitignore
+├── package.json
+└── README.md
