@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog CRUD</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1b0f2e, #2a1457);
+      color: #f2eaff;
+    }
+
+    h2, h3 {
+      color: #e3d6ff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #5b3a9e;
+      background-color: #2b1a4d;
+      color: #ffffff;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #b9a7e6;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #6f42c1;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #5a32a3;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .row {
+      background-color: #2b1a4d;
+      border: 1px solid #5b3a9e;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .muted {
+      color: #cbbcff;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Blog CRUD API</h2>
+
+  <h3>Create / Update Blog</h3>
+
+  <input id="blogId" placeholder="Blog ID (for update / delete)" />
+  <input id="title" placeholder="Title (required)" />
+  <textarea id="body" placeholder="Body (required)"></textarea>
+  <input id="author" placeholder='Author (optional, default: "Anonymous")' />
+
+  <div class="btns">
+    <button onclick="createBlog()">Create</button>
+    <button onclick="updateBlog()">Update</button>
+    <button onclick="deleteBlog()">Delete</button>
+    <button onclick="loadBlogs()">Refresh</button>
+    <p id="status" class="muted">Ready</p>
+  </div>
+
+  <h3>All Blogs</h3>
+  <div id="list"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
